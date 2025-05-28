@@ -1,0 +1,17 @@
+kafka:
+  - id: kafka1
+    brokers:
+      - "192.168.27.130:9092"
+    topic: "kafka_output_demo"
+    key: abd
+
+syslog:
+  - listen: 0.0.0.0:514
+    format: RFC5424
+    protocol: udp
+    kafka_id: kafka1
+
+webhook:
+  - listen: http://0.0.0.0:217
+    path: /get_data
+    kafka_id: kafka1
