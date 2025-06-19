@@ -7,10 +7,7 @@ A Go application that collects logs from syslog and webhook sources and forwards
 - Multiple syslog servers support (UDP/TCP)
 - Multiple webhook endpoints support (HTTP/HTTPS)
 - Multiple Kafka instances support
-- Dynamic message key extraction from JSON data
-- JSON format validation
-- Graceful shutdown support
-
+  
 ## Configuration
 
 The application is configured using a YAML file. Here's an example configuration:
