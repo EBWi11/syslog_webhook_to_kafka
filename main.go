@@ -68,9 +68,6 @@ func validateConfig(config *Config) error {
 	}
 
 	// Validate Syslog configurations
-	if len(config.Syslog) == 0 {
-		return fmt.Errorf("syslog configuration is required")
-	}
 	for i, s := range config.Syslog {
 		if s.Listen == "" {
 			return fmt.Errorf("syslog[%d]: listen address is required", i)
@@ -101,9 +98,6 @@ func validateConfig(config *Config) error {
 	}
 
 	// Validate Webhook configurations
-	if len(config.Webhook) == 0 {
-		return fmt.Errorf("webhook configuration is required")
-	}
 	for i, w := range config.Webhook {
 		if w.Listen == "" {
 			return fmt.Errorf("webhook[%d]: listen address is required", i)
